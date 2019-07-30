@@ -1,0 +1,7 @@
+<suite name="MovieVerificationTests" parallel="met">
+    <test name="testngTest">
+        <classes>
+            <class name="" />
+        </classes>
+    </test>
+</suite>
