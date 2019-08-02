@@ -1,0 +1,10 @@
+<suite name="MovieVerificationTests" parallel="methods" data-provider-thread-count="1">
+    <listeners>
+        <listener class-name="utils.Listener.TestListener" />
+    </listeners>
+    <test name="MovieVerificationTests">
+        <classes>
+            <class name="testautothon.PracticeTest.MovieVerificationTests" />
+        </classes>
+    </test>
+</suite>
