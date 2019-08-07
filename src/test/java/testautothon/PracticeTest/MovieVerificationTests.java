@@ -1,27 +1,24 @@
 package testautothon.PracticeTest;
 
-import testautothon.pages.ImdbLinkPage;
-import testautothon.pages.WikiPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import testautothon.pages.ImdbLinkPage;
+import testautothon.pages.WikiPage;
 
 public class MovieVerificationTests extends BaseWebdriverTests {
 
-    @Test(dataProvider = "ReadExcelData", timeOut = 50000, description="Simple test")
+    @Test(dataProvider = "ReadExcelData", timeOut = 50000, description = "Simple test")
     public void verifyMovieDirectorNames(String movieNumber, String movieName) {
-       logger.log("TestStarted");
-       //String movieName="The Shawshank Redemption";
+
+        //String movieName="The Shawshank Redemption";
         WikiPage wikiPage = this.openWikiHomePage(movieName);
         String directorNameFromWiki = wikiPage.getDirectorName();
 
-        logger.log("directorNameFromWiki "+directorNameFromWiki);
-
-      ImdbLinkPage imdbLinkPage =  new ImdbLinkPage(wikiPage.getMovieImdbLink(),this.getWebDriver());
+        ImdbLinkPage imdbLinkPage = new ImdbLinkPage(wikiPage.getMovieImdbLink(), this.getWebDriver());
 
         //ImdbLinkPage imdbLinkPage =
         String directorNameFromImdb = imdbLinkPage.getDiectorName();
-        logger.log("directorNameFromImdb "+directorNameFromImdb);
-        Assert.assertEquals(directorNameFromImdb,directorNameFromWiki,"");
+        Assert.assertEquals(directorNameFromImdb, directorNameFromWiki, "");
 
         driver.quit();
     }

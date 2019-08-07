@@ -18,7 +18,6 @@ import testautothon.pages.HomePage;
 import testautothon.pages.WikiPage;
 import utils.ExcelDataReader;
 import utils.PropertyUtil;
-import utils.reporting.TestLogger;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -29,7 +28,6 @@ public class BaseWebdriverTests {
 
     protected PropertyUtil propertyUtil= new PropertyUtil();
     WebDriver driver;
-    TestLogger logger = new TestLogger();
     protected String serviceUrl;
 
     protected WebDriver getWebDriver() {
@@ -139,7 +137,7 @@ public class BaseWebdriverTests {
         if (!screenShotsDirectory.exists()) {
             screenShotsDirectory.mkdir();
         }
-        this.logger.setScreenShotsDirectory(screenShotsDirectory);
+      //  this.logger.setScreenShotsDirectory(screenShotsDirectory);
     }
 
 
